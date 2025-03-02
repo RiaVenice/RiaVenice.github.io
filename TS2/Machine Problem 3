@@ -3,31 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selection Animation</title>
+    <title>Overlapping Animation</title>
     <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
         body {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            background: linear-gradient(to right, #FFF2DB, #EAEAEA);;
         }
         .container {
             display: flex;
-            gap: 20px;
+            justify-content: space-between;
+            gap: 600px;
         }
         .buttons {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 20px;
         }
         button {
             width: 100px;
-            padding: 10px;
+            padding: 12px;
+            border-radius: 10px;
+            border:none;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 14px;
             text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+
+        button:hover {
+            transform: scale(1.05); 
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+        }
+
         .box-container {
             position: relative;
             width: 250px;
@@ -42,8 +57,8 @@
             width: 100%;
             height: 100%;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: right;
+            justify-content: space-between;
             font-weight: bold;
             font-size: 20px;
             border: 5px solid;
@@ -61,7 +76,7 @@
             background-color: transparent !important;
         }
         .box.exit {
-            transform: translateY(-20%);
+            transform: translateY(-30%);
             opacity: 0.7;
         }
         .box.removed {
@@ -73,13 +88,13 @@
 <body>
     <div class="container">
         <div class="buttons">
-            <button style="background-color: purple;" onclick="dropBox('', this)">Monday</button>
+            <button style="background-color: #AA60C8;" onclick="dropBox('', this)">Monday</button>
             <button style="background-color: pink;" onclick="dropBox('', this)">Tuesday</button>
-            <button style="background-color: blue; color: white;" onclick="dropBox('', this)">Wednesday</button>
-            <button style="background-color: green;" onclick="dropBox('', this)">Thursday</button>
-            <button style="background-color: yellow;" onclick="dropBox('', this)">Friday</button>
-            <button style="background-color: orange;" onclick="dropBox('', this)">Saturday</button>
-            <button style="background-color: red; color: white;" onclick="dropBox('', this)">Sunday</button>
+            <button style="background-color: #2973B2; color: white;" onclick="dropBox('', this)">Wednesday</button>
+            <button style="background-color: #6E8E59;" onclick="dropBox('', this)">Thursday</button>
+            <button style="background-color: #FADA7A;" onclick="dropBox('', this)">Friday</button>
+            <button style="background-color: #F0A04B;" onclick="dropBox('', this)">Saturday</button>
+            <button style="background-color: #B82132; color: white;" onclick="dropBox('', this)">Sunday</button>
         </div>
         <div class="box-container" id="boxContainer"></div>
     </div>
@@ -89,15 +104,15 @@
             const oldBox = boxContainer.querySelector(".box.active");
             
             if (oldBox) {
-                oldBox.classList.add("exit"); // Slide up slightly and fade
+                oldBox.classList.add("exit"); 
                 setTimeout(() => {
-                    oldBox.classList.add("removed"); // Fully slide up
+                    oldBox.classList.add("removed"); 
                 }, 600);
-                setTimeout(() => oldBox.remove(), 2000); // Remove after animation
+                setTimeout(() => oldBox.remove(), 2000); 
             }
             
             const newBox = document.createElement("div");
-            newBox.classList.add("box", "new"); // Start above container
+            newBox.classList.add("box", "new"); 
             newBox.style.backgroundColor = getComputedStyle(button).backgroundColor;
             newBox.style.borderColor = getComputedStyle(button).backgroundColor;
             newBox.innerText = day;
@@ -106,10 +121,10 @@
             setTimeout(() => {
                 newBox.classList.remove("new");
                 newBox.classList.add("active");
-            }, 10);
+            }, 20);
             
             setTimeout(() => {
-                newBox.classList.add("filled"); // Lose fill, keep border
+                newBox.classList.add("filled"); 
             }, 500);
         }
     </script>
