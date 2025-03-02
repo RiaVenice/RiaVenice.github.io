@@ -3,9 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Day Selection Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        button {
+            width: 100px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+        }
+        .box-container {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .box {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            border: 5px solid transparent;
+        }
+        .exit {
+            background-color: transparent !important;
+            border-color: inherit;
+            transform: translateY(-20px);
+            opacity: 0.7;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .slide-up {
+            transform: translateY(-100%) !important;
+            opacity: 0;
+        }
+        .hollow {
+            background-color: transparent !important;
+            border-width: 5px;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="buttons">
+            <button style="background-color: purple;" onclick="dropBox('Monday', this)">Monday</button>
+            <button style="background-color: pink;" onclick="dropBox('Tuesday', this)">Tuesday</button>
+            <button style="background-color: blue; color: white;" onclick="dropBox('Wednesday', this)">Wednesday</button>
+            <button style="background-color: green;" onclick="dropBox('Thursday', this)">Thursday</button>
+            <button style="background-color: yellow;" onclick="dropBox('Friday', this)">Friday</button>
+            <button style="background-color: orange;" onclick="dropBox('Saturday', this)">Saturday</button>
+            <button style="background-color: red; color: white;" onclick="dropBox('Sunday', this)">Sunday</button>
+        </div>
+        <div class="box-container" id="boxContainer"></div>
+    </div>
+    <script>
+        function dropBox(day, button) {
+            const boxContainer = document.getElementById("boxContainer");
+            const oldBox = boxContainer.querySelector(".box");
+            
+            if (oldBox) {
+                oldBox.classList.add("hollow"); // Make old box lose fill
+                setTimeout(() => {
+                    oldBox.style.transform = "translateY(-100%)"; // Slide old box up
+                    oldBox.style.opacity = "0";
+                }, 300);
+                setTimeout(() => oldBox.remove(), 800); // Remove after animation
+            }
+            
+            const newBox = document.createElement("div");
+            newBox.classList.add("box");
+            newBox.style.backgroundColor = getComputedStyle(button).backgroundColor;
+            newBox.style.borderColor = getComputedStyle(button).backgroundColor;
+            newBox.innerText = day;
+            boxContainer.appendChild(newBox);
+            
+            setTimeout(() => {
+                newBox.style.opacity = "1";
+                newBox.style.transform = "translateY(0)";
+            }, 10);
+        }
+    </script>
 </body>
 </html>
