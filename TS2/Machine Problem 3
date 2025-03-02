@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day Selection Animation</title>
+    <title>Selection Animation</title>
     <style>
         body {
             display: flex;
@@ -24,7 +24,6 @@
         button {
             width: 100px;
             padding: 10px;
-            border: none;
             cursor: pointer;
             font-size: 16px;
             text-align: center;
@@ -34,9 +33,9 @@
             width: 250px;
             height: 250px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            align-items: right;
+            justify-content: right;
+            
         }
         .box {
             position: absolute;
@@ -47,66 +46,71 @@
             justify-content: center;
             font-weight: bold;
             font-size: 20px;
-            opacity: 0;
+            border: 5px solid;
+            transition: transform 0.7s, opacity 0.9s ease, background-color 0.9s ease, border-color 0.9s ease;
+        }
+        .box.new {
             transform: translateY(-100%);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            border: 5px solid transparent;
+            opacity: 1;
         }
-        .exit {
+        .box.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .box.filled {
             background-color: transparent !important;
-            border-color: inherit;
-            transform: translateY(-20px);
+        }
+        .box.exit {
+            transform: translateY(-20%);
             opacity: 0.7;
-            transition: transform 0.5s ease, opacity 0.5s ease;
         }
-        .slide-up {
-            transform: translateY(-100%) !important;
+        .box.removed {
+            transform: translateY(-100%);
             opacity: 0;
-        }
-        .hollow {
-            background-color: transparent !important;
-            border-width: 5px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="buttons">
-            <button style="background-color: purple;" onclick="dropBox('Monday', this)">Monday</button>
-            <button style="background-color: pink;" onclick="dropBox('Tuesday', this)">Tuesday</button>
-            <button style="background-color: blue; color: white;" onclick="dropBox('Wednesday', this)">Wednesday</button>
-            <button style="background-color: green;" onclick="dropBox('Thursday', this)">Thursday</button>
-            <button style="background-color: yellow;" onclick="dropBox('Friday', this)">Friday</button>
-            <button style="background-color: orange;" onclick="dropBox('Saturday', this)">Saturday</button>
-            <button style="background-color: red; color: white;" onclick="dropBox('Sunday', this)">Sunday</button>
+            <button style="background-color: purple;" onclick="dropBox('', this)">Monday</button>
+            <button style="background-color: pink;" onclick="dropBox('', this)">Tuesday</button>
+            <button style="background-color: blue; color: white;" onclick="dropBox('', this)">Wednesday</button>
+            <button style="background-color: green;" onclick="dropBox('', this)">Thursday</button>
+            <button style="background-color: yellow;" onclick="dropBox('', this)">Friday</button>
+            <button style="background-color: orange;" onclick="dropBox('', this)">Saturday</button>
+            <button style="background-color: red; color: white;" onclick="dropBox('', this)">Sunday</button>
         </div>
         <div class="box-container" id="boxContainer"></div>
     </div>
     <script>
         function dropBox(day, button) {
             const boxContainer = document.getElementById("boxContainer");
-            const oldBox = boxContainer.querySelector(".box");
+            const oldBox = boxContainer.querySelector(".box.active");
             
             if (oldBox) {
-                oldBox.classList.add("hollow"); // Make old box lose fill
+                oldBox.classList.add("exit"); // Slide up slightly and fade
                 setTimeout(() => {
-                    oldBox.style.transform = "translateY(-100%)"; // Slide old box up
-                    oldBox.style.opacity = "0";
-                }, 300);
-                setTimeout(() => oldBox.remove(), 800); // Remove after animation
+                    oldBox.classList.add("removed"); // Fully slide up
+                }, 600);
+                setTimeout(() => oldBox.remove(), 2000); // Remove after animation
             }
             
             const newBox = document.createElement("div");
-            newBox.classList.add("box");
+            newBox.classList.add("box", "new"); // Start above container
             newBox.style.backgroundColor = getComputedStyle(button).backgroundColor;
             newBox.style.borderColor = getComputedStyle(button).backgroundColor;
             newBox.innerText = day;
             boxContainer.appendChild(newBox);
             
             setTimeout(() => {
-                newBox.style.opacity = "1";
-                newBox.style.transform = "translateY(0)";
+                newBox.classList.remove("new");
+                newBox.classList.add("active");
             }, 10);
+            
+            setTimeout(() => {
+                newBox.classList.add("filled"); // Lose fill, keep border
+            }, 500);
         }
     </script>
 </body>
