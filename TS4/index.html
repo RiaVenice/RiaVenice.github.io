@@ -229,8 +229,147 @@
             flex: 2;
             text-align: left;
         }
-       
 
+        /* Responsive Design */
+        @media screen and (max-width: 1200px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .header-title, .subtitle {
+                left: 20px;
+                width: 90%;
+            }
+
+            .menu-btn {
+                cursor: pointer;
+                padding: 0.6rem 1rem;
+                border-radius: 10px;
+                position: fixed;
+                top: 1rem;
+                right: 1rem;
+                z-index: 1055;
+            }
+        }
+
+        @media screen and (max-width: 800px){
+            .menu-btn {
+                cursor: pointer;
+                padding: 0.5rem 1rem;
+                border-radius: 10px;
+                position: fixed;
+                top: 1rem;
+                right: 1rem;
+                z-index: 1055;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .header-title, .subtitle {
+                font-size: 1.5rem;
+                text-align: center;
+                left: 0;
+            }
+            .menu-btn {
+                top: 0.5rem;
+                right: 0.5rem;
+            }
+
+            .logo {
+                position: absolute;
+                top: -1.5rem;
+                left: -2rem;
+                width: 260px;
+            }
+    
+            .logo img {
+                width: 90%;
+                height: auto;
+            }
+
+            .modal-dialog {
+                max-width: 79%;
+                height: 90%;
+                display: flex; 
+            }
+    
+            .modal-body{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+               
+            }
+
+            .modal-img {
+                width: 220px;
+                height: 320px;
+                object-fit: cover;
+                border-radius:10px;
+            }
+           
+            .modal-text {
+                font-size: small;
+                flex: 1;
+                text-align: left;
+                padding: 10px;
+            }
+    
+    
+            .modal-header h5 {
+                font-size: 1.5rem;
+                font-weight: 600;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+               
+            }
+    
+    
+            .info-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+            }
+           
+            .left-info {
+                font-size: 12px;
+                flex: 1;
+                text-align: left;
+            }
+           
+            .divider {
+                width: 2px;
+                height: 50px;
+                background-color: black;
+            }
+           
+            .right-info {
+                font-size: 12px;
+                flex: 2;
+                text-align: left;
+            }
+
+            .menu-btn {
+                cursor: pointer;
+                padding: 0.5rem 1rem;
+                border-radius: 10px;
+                position: fixed;
+                top: 1rem;
+                right: 1rem;
+                z-index: 1055;
+            }
+    
+        }
 
     </style>
 </head>
