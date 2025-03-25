@@ -368,6 +368,81 @@
                 right: 1rem;
                 z-index: 1055;
             }
+
+            @media screen and (max-width: 450px) {
+                .modal-dialog {
+                    max-width: 79%;
+                    height: 90%;
+                    display: flex; 
+                }
+        
+                .modal-body{
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                   
+                }
+    
+                .modal-img {
+                    width: 120px;
+                    height: 220px;
+                    object-fit: cover;
+                    border-radius:10px;
+                }
+               
+                .modal-text {
+                    font-size: 10px;
+                    flex: 1;
+                    text-align: left;
+                    padding: 10px;
+                }
+        
+        
+                .modal-header h5 {
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                   
+                }
+        
+        
+                .info-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 20px;
+                }
+               
+                .left-info {
+                    font-size: 9px;
+                    flex: 1;
+                    text-align: left;
+                }
+               
+                .divider {
+                    width: 2px;
+                    height: 50px;
+                    background-color: black;
+                }
+               
+                .right-info {
+                    font-size: 9px;
+                    flex: 2;
+                    text-align: left;
+                }
+    
+                .menu-btn {
+                    cursor: pointer;
+                    padding: 0.4rem 1rem;
+                    border-radius: 10px;
+                    position: fixed;
+                    top: 1rem;
+                    right: 1rem;
+                    z-index: 1055;
+                }
     
         }
 
