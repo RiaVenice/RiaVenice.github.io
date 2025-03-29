@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+
+<!-- BODY -->
+<body>
+    <!--HOMEPAGE-->
+    <section class="homepage">
+            <img src="images/banner.jpg" alt="Pokémon GO">
+   
+         <!-- START OF MINI NAVBAR -->
+    <nav class="options">
+        <a href="#featured">Featured</a>
+        <a href="#item-boxes">Item Boxes</a>
+        <a href="#pokecoins">PokéCoins</a>
+        <a href="#daily-bundles">Daily Bundles</a>
+    </nav>
+    <!-- END OF MINI NAVBAR -->
+
+
+    </section>
+    <!--END OF HOMEPAGE-->
+    <main>
+    <!-- START OF FEATURED ITEMS -->
+    <div class="container" id="featured">
+        <div class="card">
+            <img src="images/feature.png" alt="Pokémon GO: PokéGO Safari Bundle">
+            <div class="content">
+                <span class="featured-tag">FEATURED</span>
+                <br>
+                <br>
+                <h2>Pokémon GO: PokéGO Safari Bundle</h2>
+                <p>Can only be purchased 1 time.</p>
+                <br>
+                <span class="price">₱500.00</span>
+            </div>
+        </div>
+    </div>
+    <!-- END OF FEATURED ITEMS -->
+
+    <!-- START OF ITEM BOXES -->
+     <div class="header" id="item-boxes">
+        <h2>Item Boxes</h2>
+     </div>
+     <section class="product">
+        <button class="pre-btn"><img src="images/arrow.png" alt=""></button>
+        <button class="nxt-btn"><img src="images/arrow.png" alt=""></button>
+        <div class="product-container">
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">ONE TIME ONLY</span>
+                    <img src="images/card1.png" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="addToCart()">Add To Cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Ultra Trainer Bundle</h2>
+                    <p class="product-short-description">With Masterball 3x</p>
+                    <span class="price">₱159.00</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">ONE TIME ONLY</span>
+                    <img src="images/card2.png" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="addToCart()">Add To Cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">GO Starter Bundle</h2>
+                    <p class="product-short-description">GreatBall 1x & Magic Candy 3x</p>
+                    <span class="price">₱159.00</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">ONE TIME ONLY</span>
+                    <img src="images/card3.png" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="addToCart()">Add To Cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Mastery Box</h2>
+                    <p class="product-short-description">PinapBerry 1x & UltraBall 5x</p>
+                    <span class="price">₱289.00</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">LIMITED-TIME ONLY</span>
+                    <img src="images/card4.png" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="addToCart()">Add To Cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Ultra Raid Box</h2>
+                    <p class="product-short-description">Can only be purchased 3 times</p>
+                    <span class="price">₱289.00</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/card5.png" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="addToCart()">Add To Cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Ticket Box</h2>
+                    <span class="price">₱59.00</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">POPULAR</span>
+                    <img src="images/card6.png" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="addToCart()">Add To Cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Battle Pass</h2>
+                    <p class="product-short-description">3 pieces</p>
+                    <span class="price">₱88.00</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">POPULAR</span>
+                    <img src="images/card7.png" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="addToCart()">Add To Cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Max Revive</h2>
+                    <p class="product-short-description">5 pieces</p>
+                    <span class="price">₱59.00</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">POPULAR</span>
+                    <img src="images/card8.png" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="addToCart()">Add To Cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Egg Incubator</h2>
+                    <p class="product-short-description">2 pieces</p>
+                    <span class="price">₱88.00</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/card9.png" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="addToCart()">Add To Cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Super Incubator</h2>
+                    <p class="product-short-description">3 pieces</p>
+                    <span class="price">₱90.00</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/card10.png" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="addToCart()">Add To Cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Max Mushroom</h2>
+                    <p class="product-short-description">3 pieces</p>
+                    <span class="price">₱289.00</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/card11.png" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="addToCart()">Add To Cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Max Particle Pack</h2>
+                    <p class="product-short-description">1 piece</p>
+                    <span class="price">₱235.00</span>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- END OF ITEM BOXES -->
+
+    <!-- START OF POKECOINS -->
+     <div class="header" id="pokecoins">
+        <h2>PokéCoins</h2>
+     </div>
+   
+    <section class="product">
+        <button class="pre-btn"><img src="images/arrow.png" alt=""></button>
+        <button class="nxt-btn"><img src="images/arrow.png" alt=""></button>
+        <div class="product-container">
+            <div class="product-card">
+                <div class="product-image">
+   
+                    <img src="images/card12.png" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="addToCart()">Add To Cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">110 PokéCoins</h2>
+                    <p class="product-short-description">10 Web Store Bonus Coins</p>
+                    <span class="price">₱29.00</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                   
+                    <img src="images/card13.png" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="addToCart()">Add To Cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">600 PokéCoins</h2>
+                    <p class="product-short-description">50 Web Store Bonus Coins</p>
+                    <span class="price">₱149.00</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                 
+                    <img src="images/card14.png" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="addToCart()">Add To Cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">1,300 PokéCoins</h2>
+                    <p class="product-short-description">100 Web Store Bonus Coins</p>
+                    <span class="price">₱289.00</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                   
+                    <img src="images/card15.png" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="addToCart()">Add To Cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">2,700 PokéCoins</h2>
+                    <p class="product-short-description">200 Web Store Bonus Coins</p>
+                    <span class="price">₱589.00</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                   
+                    <img src="images/card16.png" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="addToCart()">Add To Cart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">15,500 PokéCoins</h2>
+                    <p class="product-short-description">1,000 Web Store Bonus Coins</p>
+                    <span class="price">₱2,950.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END OF POKECOINS -->
+    <!-- START OF DAILY BUNDLES -->
+     <div class="header" id="daily-bundles">
+        <h2>Daily Bundles</h2>
+     </div>
+    <div class="container" id="featured">
+        <div class="card">
+            <img src="images/card17.png" alt="Pokémon GO Fest 2025 Ticket">
+            <div class="content">
+                <span class="featured-tag">FEATURED</span>
+                <br>
+                <br>
+                <h2>Elite Mystery PokéPack</h2>
+                <p>3 Daily Bundles</p>
+                <br>
+                <span class="price">₱660.00</span>
+            </div>
+        </div>
+    </div>
+    <!-- END OF DAILY BUNDLES -->
+    <div id="overlay"></div>
+
+    <div id="custom-confirm">
+        <p>Added to cart!</p>
+        <br>
+        <br>
+        <button id="confirm-yes">Proceed to Cart</button>
+        <button id="confirm-no">Keep Shopping!</button>
+    </div>
+   
+</main>
+    <script src="script.js"></script>
+</body>
+</html>
